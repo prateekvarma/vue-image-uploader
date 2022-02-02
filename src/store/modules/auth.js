@@ -10,7 +10,11 @@ const getters = {
 };
 
 const actions = {
-
+    //the {commit} underneath is just importing a keyword which is traditionally used by 'actions' to call a mutation function
+    logout: ({ commit }) => {
+        //below, we're calling the setToken mutation, and passing the token value as null -> which will logout the user.
+        commit('setToken', null)
+    }
 };
 
 const mutations = {
