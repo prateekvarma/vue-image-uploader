@@ -14,5 +14,8 @@ const actions = {
 };
 
 const mutations = {
-    
+    setToken: (state, token) => {
+        //the state.token refers to the token variable in the object state's const above
+        state.token = token;
+    }
 };
