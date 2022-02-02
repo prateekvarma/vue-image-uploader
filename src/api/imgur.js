@@ -1,5 +1,5 @@
 import qs from 'qs';
-//the above is a Query String we installed using NPM, this is a nice library to create query string URLs for making API calls
+//the above is Query String we installed using NPM, this is a nice library to create query string URLs for making API calls
 
 const CLIENT_ID = '';
 const ROOT_URL = '';
