@@ -1,9 +1,17 @@
 <template>
-    <h3>App Header</h3>
+    <div>
+        <a href="/">Image Storage</a>
+        <div>
+            <a href="#" @click="login">Login</a>
+        </div>
+    </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
-    name: 'AppHeader'
+    name: 'AppHeader',
+    methods: mapActions(['login'])
 };
 </script>
