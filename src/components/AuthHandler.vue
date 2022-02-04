@@ -1,5 +1,5 @@
 <template>
-    Wait.. retrieving token in progress
+    <div>Wait.. retrieving token in progress</div>
 </template>
 
 <script>
