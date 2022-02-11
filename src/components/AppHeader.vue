@@ -1,9 +1,9 @@
 <template>
-    <div>
-        <a href="/">Image Storage</a>
+    <div class="ui secondary pointing menu">
+        <a href="/" class="active item">Image Storage</a>
         {{isLoggedIn}}
-        <div>
-            <a href="#" @click="login">Login</a>
+        <div class="right menu">
+            <a href="#" class="ui item" @click="login">Login</a>
         </div>
     </div>
 </template>
