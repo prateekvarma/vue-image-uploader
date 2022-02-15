@@ -16,7 +16,8 @@ const actions = {
     //the {commit} underneath is just importing a keyword which is traditionally used by 'actions' to call a mutation function
     logout: ({ commit }) => {
         //below, we're calling the setToken mutation, and passing the token value as null -> which will logout the user.
-        commit('setToken', null)
+        commit('setToken', null);
+        window.localStorage.removeItem('imgur_token');
     },
     login: () => {
         api.login();
