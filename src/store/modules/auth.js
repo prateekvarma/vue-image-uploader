@@ -1,5 +1,6 @@
 import api from '../../api/imgur';
 import qs from 'qs';
+import { router } from '../../main';
 
 const state = {
     token: window.localStorage.getItem('imgur_token')
@@ -32,6 +33,7 @@ const actions = {
         //above, we're calling the setToken mutation, and passing the token value as 'query.access_token' -> which is a key-value pair's key, taken from the URL
         window.localStorage.setItem('imgur_token', query.access_token);
         //above, we're setting a variable named 'imgur_token' into the localStorage of the native browser. This way, we can access this variable & sustain login status of the user even when he goes to other URLs and returns back to find his login status intact.
+        router.push('/');
     }
 };
 
