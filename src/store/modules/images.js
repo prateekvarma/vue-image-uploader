@@ -11,11 +11,12 @@ const getters = {
 };
 
 const actions = {
-    fetchImages ({ rootState }) {
+    async fetchImages ({ rootState }) {
         //below is a ES2015 format that equals : const token = rootState.auth.token
         //Basically, below the rootState is allowing us to go into the 'auth' module, and access the 'token' property and bring it into this module.
         const { token } = rootState.auth;
-        api.fetchImages(token);
+        const response = await api.fetchImages(token);
+        console.log(response);
     }
 };
 
@@ -25,4 +26,11 @@ const mutations = {
         //below, the passed object 'images' is assigned as the new state object.
         state.images = images;
     }
+};
+
+export default {
+    state,
+    getters,
+    actions,
+    mutations
 };
