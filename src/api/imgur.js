@@ -1,5 +1,5 @@
-import qs from 'qs';
-//the above is Query String we installed using NPM, this is a nice library to create query string URLs for making API calls
+import qs from 'qs'; //installed using NPM,library to create query string URLs for API calls
+import axios from 'axios';
 
 const CLIENT_ID = 'XXX';
 const ROOT_URL = 'https://api.imgur.com';
@@ -13,5 +13,13 @@ export default {
         };
         //below will send the user to the following URL for auth
         window.location = `${ROOT_URL}/oauth2/authorize?${qs.stringify(querystring)}`;
+    },
+    fetchImages(token) {
+        //the '/3/account/me/images' below, comes from the imgur API docs
+         axios.get(`${ROOT_URL}/3/account/me/images`, {
+             headers: {
+                 Authorization: `Bearer ${token}`
+             }
+         })
     }
 }
