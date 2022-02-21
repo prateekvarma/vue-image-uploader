@@ -1,3 +1,5 @@
+import api from '../../api/imgur.js';
+
 const state = {
     //below images is an array, which will have different objects, each object will represent a different image.
     images = []
@@ -9,7 +11,12 @@ const getters = {
 };
 
 const actions = {
-
+    fetchImages ({ rootState }) {
+        //below is a ES2015 format that equals : const token = rootState.auth.token
+        //Basically, below the rootState is allowing us to go into the 'auth' module, and access the 'token' property and bring it into this module.
+        const { token } = rootState.auth;
+        api.fetchImages(token);
+    }
 };
 
 const mutations = {
