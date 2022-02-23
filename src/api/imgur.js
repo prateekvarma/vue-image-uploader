@@ -16,7 +16,7 @@ export default {
     },
     fetchImages(token) {
         //the '/3/account/me/images' below, comes from the imgur API docs
-         axios.get(`${ROOT_URL}/3/account/me/images`, {
+         return axios.get(`${ROOT_URL}/3/account/me/images`, {
              headers: {
                  Authorization: `Bearer ${token}`
              }
