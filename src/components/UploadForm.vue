@@ -19,5 +19,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
+    }
+    input {
+        width: 100%;
+        height: 30vh;
+        position: absolute;
+        opacity: 0; /* This makes the input element invisible */
     }
 </style>
