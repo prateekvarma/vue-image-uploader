@@ -1,7 +1,10 @@
 <template>
     <div>
         <AppHeader />
-        <router-view></router-view>
+        <div class="ui container">
+            /* router-view displays the content when some router URL is clicked */
+            <router-view></router-view>
+        </div>
     </div>    
 </template>
 
