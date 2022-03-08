@@ -21,8 +21,8 @@
         align-items: center;
         position: relative;
     }
-    .dropper hover {
-        background-color: #eeee;
+    .dropper:hover {
+        background-color: #eee;
     }
     input {
         width: 100%;
