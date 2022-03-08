@@ -18,6 +18,13 @@ const actions = {
         const response = await api.fetchImages(token);
         console.log(response);
         commit('setImages', response.data.data);
+    },
+    //Below {commit} is traditionally used by 'actions' to call a mutation function
+    // Below, the 'images' will contain a list of all images
+    async uploadImages({commit}, images) {
+        //Below, the console.log will log an event, which will have the 'target:input', inside which you will find 'files' which will have the data of the uploaded file.
+        console.log('images: ', images);
+        commit //just wrote to bypass eslint, for not using {commit}
     }
 };
 
