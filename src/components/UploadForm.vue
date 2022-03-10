@@ -2,7 +2,7 @@
     <div class="dropper">
         <!-- The ($event.target.files) below, passes the specific location on the object where the file is at. If you won't pass this, then the entire 'event' object will be passed - whose file object can later be accessed from the function - but here is better -->
         <!--The $ sign before the event, means that Vue needs to look an actual 'event', rather than a variable named event-->
-        <input type="file" @change="uploadImages($event.target.files)" />
+        <input type="file" @change="uploadImages($event.target.files)" multiple />
         <span>Drop files here!</span>
     </div>
 </template>
