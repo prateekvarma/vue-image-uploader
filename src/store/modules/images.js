@@ -22,7 +22,7 @@ const actions = {
     //Below {commit} is traditionally used by 'actions' to call a mutation function
     // Below, the 'images' will contain a list of all images
     async uploadImages({commit}, images) {
-        //Below, the console.log will log an event, which will have the 'target:input', inside which you will find 'files' which will have the data of the uploaded file.
+        //Below, after passing explicit 'files' data object from the template, where the function is being called, the 'images'
         console.log('images: ', images);
         commit //just wrote to bypass eslint, for not using {commit}
     }
