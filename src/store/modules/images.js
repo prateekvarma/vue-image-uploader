@@ -19,12 +19,15 @@ const actions = {
         console.log(response);
         commit('setImages', response.data.data);
     },
-    //Below {commit} is traditionally used by 'actions' to call a mutation function
+    //Below {rootState} will have access to all the states in our VUEX store
     // Below, the 'images' will contain a list of all images
-    async uploadImages({commit}, images) {
-        //Below, after passing explicit 'files' data object from the template, where the function is being called, the 'images'
-        console.log('images: ', images);
-        commit //just wrote to bypass eslint, for not using {commit}
+    async uploadImages({rootState}, images) {
+        //Get the access token because the API docs require a bearer token
+        const { token } = rootState.auth; //check format meaning above
+
+        //Call a function in api/imgur.js module to do the upload
+
+        //Redirect user to the ImageList component
     }
 };
 
