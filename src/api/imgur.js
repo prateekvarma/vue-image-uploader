@@ -24,7 +24,7 @@ export default {
     },
     upload(images, token) {
         //Below, take object 'image', convert it to an Array, then map each element into 'image'. This is because accroding to imgur docs, we can upload only one image at a time.
-        Array.from(images).map(image => {
+        const promises = Array.from(images).map(image => {
             //FormData is a native JS object that can build an object with form data, which we can use to send requests. FormData does not need to be imported, it's globally available.
             const formData = new FormData();
             //Below, we build the formData object, append a variable called 'image' containing the actual image. The name 'image' is required by the official docs of imgur
@@ -37,5 +37,7 @@ export default {
             });
             //the 'return' value above is going to be a promise, that represents the upload value itself. We need to combine all those individual uploads, and adjust them as one SINGLE promise for the upload function as a whole.
         });
+        return Promise.all(promises);
+        //above, is the amazing 'Promise.all()' native JS function, which waits for all the 'promises' to execute, and only then will it return. This returns all the small promises for each image upload, and it can be used as a one combined promise to be used for vuex.
     }
 }
