@@ -1,3 +1,4 @@
+import { pick } from 'lodash';
 import api from '../../api/imgur';
 
 const state = {
@@ -15,6 +16,7 @@ const actions = {
         //below is a ES2015 format that equals : const token = rootState.auth.token
         //Basically, below the rootState is allowing us to go into the 'auth' module, and access the 'token' property and bring it into this module.
         const { token } = rootState.auth;
+        //below, strange 'api.fetchImages' location is because how we defined it at the top
         const response = await api.fetchImages(token);
         console.log(response);
         commit('setImages', response.data.data);
@@ -26,7 +28,8 @@ const actions = {
         const { token } = rootState.auth; //check format meaning above
 
         //Call a function in api/imgur.js module to do the upload
-
+        //below, strange 'api.upload' location is because how we defined it at the top
+        await api.upload(images, token);
         //Redirect user to the ImageList component
     }
 };
