@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="image-container">
         <img v-for="image in allImages" v-bind:src="image.link" v-bind:key="image.id" />
     </div>
 </template>
@@ -16,3 +16,14 @@ import { mapActions, mapGetters } from 'vuex';
         }
     };
 </script>
+
+<style scoped>
+    .image-container {
+        column-count: 3;
+        column-gap: 0; /*This will be fixed by the image padding below */
+    }
+    img {
+        max-width: 100%;/*This ensures the images don't fall out of the frames */
+        padding: 5px;/*This takes care of the column-gap above, so that imgs wont stick together */
+    }
+</style>
