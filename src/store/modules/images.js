@@ -1,5 +1,5 @@
-import { pick } from 'lodash';
 import api from '../../api/imgur';
+import { router } from '../../main';
 
 const state = {
     //below images is an array, which will have different objects, each object will represent a different image.
@@ -29,8 +29,10 @@ const actions = {
 
         //Call a function in api/imgur.js module to do the upload
         //below, strange 'api.upload' location is because how we defined it at the top
-        await api.upload(images, token);
+        await api.uploadImages(images, token);
+
         //Redirect user to the ImageList component
+        router.push('/');
     }
 };
 

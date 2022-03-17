@@ -22,7 +22,7 @@ export default {
              }
          })
     },
-    upload(images, token) {
+    uploadImages(images, token) {
         //Below, take object 'image', convert it to an Array, then map each element into 'image'. This is because accroding to imgur docs, we can upload only one image at a time.
         const promises = Array.from(images).map(image => {
             //FormData is a native JS object that can build an object with form data, which we can use to send requests. FormData does not need to be imported, it's globally available.
