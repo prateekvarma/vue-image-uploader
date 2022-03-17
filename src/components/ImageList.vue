@@ -1,6 +1,9 @@
 <template>
-    <div class="image-container">
-        <img v-for="image in allImages" v-bind:src="image.link" v-bind:key="image.id" />
+    <div>
+        <div v-if="isLoggedIn" class="image-container">
+            <img v-for="image in allImages" v-bind:src="image.link" v-bind:key="image.id" />
+        </div>
+        <h2 v-else>Log in to get started!</h2>
     </div>
 </template>
 
@@ -10,7 +13,7 @@ import { mapActions, mapGetters } from 'vuex';
         name: 'ImageList',
         //below, mapActions is the only way to call actions, and then the created() lifecycle hook will call the function every time this component will be rendered.
         methods: mapActions(['fetchImages']),
-        computed: mapGetters(['allImages']),
+        computed: mapGetters(['allImages', 'isLoggedIn']),
         created() {
             this.fetchImages();
         }
